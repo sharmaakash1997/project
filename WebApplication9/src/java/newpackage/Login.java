@@ -43,10 +43,7 @@ public class Login extends HttpServlet {
                 rd.forward(request,response);
             }
             
-            else{
-                rd=request.getRequestDispatcher("newhtml.html");  
-                rd.forward(request,response);
-            }
+           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

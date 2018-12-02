@@ -25,19 +25,20 @@ public class RecordCheck {
         int rs=ps.executeUpdate();
         if(rs>0)
         {
+            //System.out.print("done");
             return "data inserted";
         }
         return "data not inserted";
     }    
 
-   public String insertque(String q) throws ClassNotFoundException, SQLException, IOException
+   public String insertque(String email,String q) throws ClassNotFoundException, SQLException, IOException
     {
          
         Class.forName("com.mysql.jdbc.Driver");
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","");  
-        PreparedStatement ps = con.prepareStatement("insert into ans(question) values(?)");
-        ps.setString(1, q);
-        
+        PreparedStatement ps = con.prepareStatement("insert into ans(email,question) values(?,?)");
+        ps.setString(1, email);
+        ps.setString(2, q);
         int rs=ps.executeUpdate();
         if(rs>0)
         {
@@ -48,7 +49,7 @@ public class RecordCheck {
     public static void main(String args[]) throws ClassNotFoundException, SQLException, IOException
     {
         RecordCheck n=new RecordCheck();
-         n.insertque("passwr");
+        //n.insertque("passwr","jshd");
     }
 
 }

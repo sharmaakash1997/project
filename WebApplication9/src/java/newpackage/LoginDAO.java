@@ -36,7 +36,7 @@ public class LoginDAO {
         {
             return "Login successfull";
         }
-        return "invalid login details";
+        return "Invalid login details";
     }
     
     
