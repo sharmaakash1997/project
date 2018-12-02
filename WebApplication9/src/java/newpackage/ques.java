@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package newpackage;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+/**
+ *
+ * @author Admin
+ */
+public class ques extends HttpServlet {
+
+    public void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException 
+    {
+        res.setContentType("text/html;charset=UTF-8");
+        String q =req.getParameter("que");
+     
+        
+        RecordCheck rs = new RecordCheck();
+        try {
+           
+             rs.insertque(q);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(check.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(check.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}

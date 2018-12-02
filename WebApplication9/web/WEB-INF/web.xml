@@ -16,10 +16,17 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>newpackage.Login</servlet-class>
     </servlet>
-   
     <servlet>
         <servlet-name>RecordCheck</servlet-name>
         <servlet-class>newpackage.RecordCheck</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>homepage</servlet-name>
+        <servlet-class>newpackage.homepage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ques</servlet-name>
+        <servlet-class>newpackage.ques</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>check</servlet-name>
@@ -44,6 +51,14 @@
     <servlet-mapping>
         <servlet-name>RecordCheck</servlet-name>
         <url-pattern>/RecordCheck</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>homepage</servlet-name>
+        <url-pattern>/homepage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ques</servlet-name>
+        <url-pattern>/ques</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
